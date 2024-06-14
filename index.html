@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auteurs</title>
+</head>
+<body>
+    <h1>Liste des Auteurs de DBLP</h1>
+    <ul id="author-list"></ul>
+
+    <script>
+        fetch('/api/authors')
+            .then(response => response.json())
+            .then(data => {
+                const authorList = document.getElementById('author-list');
+                data.forEach(author => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = author.name;
+                    authorList.appendChild(listItem);
+                });
+            });
+    </script>
+</body>
+</html>
