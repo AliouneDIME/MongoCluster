@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-const uri = "mongodb+srv://Dime:AliouEsp22@cluster0.awxz2qv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://<username>:<password>@cluster0.mongodb.net/test?retryWrites=true&w=majority)";
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected'))
